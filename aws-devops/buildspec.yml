@@ -1,0 +1,19 @@
+
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+  build:
+    commands:
+      - echo "Running Python tests..."
+      - python -m unittest discover -v
+      - mkdir -p output
+      - cp app.py output/
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: output
+
